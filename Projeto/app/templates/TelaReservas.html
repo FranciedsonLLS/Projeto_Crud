@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TELAS RESERVAS</h1>
+    <!--Tela Principal de Clientes (LISTA CLIENTES)-->
+    <ul>
+    {%for Reserva in Reservas%}
+       <li> {{Reserva.id}} - {{Reserva.cliente}} - {{Reserva.filme}} - {{Reserva.status}}
+        <a href="{% url 'url_update_reservas' Reserva.id %}"> Editar Reserva </a>
+        <a href="{% url 'url_delete_reservas' Reserva.id %}">Delete Reserva</a>
+       </li> 
+    {% endfor %}
+    <a href="{% url 'url_create_reservas' %}">Adicionar Reserva</a>
+    </ul>
+</body>
+</html>

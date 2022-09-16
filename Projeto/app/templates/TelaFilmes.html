@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TELAS FILMES</h1>
+    <!--Tela Principal de Clientes (LISTA CLIENTES)-->
+    <ul>
+    {%for Filme in Filmes%}
+       <li> {{Filme}} - {{Filme.autor}} - {{Filme.duracao}} - {{Filme.genero}} - {{Filme.data_criacao}} - 
+        <a href="{% url 'url_update_filme' Filme.id%}"> Editar Filme </a>
+        <a href="{% url 'url_delete_filme' Filme.id%}">Delete Filme</a>
+       </li> 
+    {% endfor %}
+    <a href="{% url 'url_create_filme' %}">Adicionar Filme</a>
+    </ul>
+</body>
+</html>
