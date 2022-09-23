@@ -6,15 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
+    <link href="{% static 'form_filme.css' %}" rel="stylesheet">
 </head>
+
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'logo.png'%}" alt="">
+        </div>
+        <ul class="nav">
+            <li><a href="">HOME</a></li>
+            <li><a href="{% url 'url_reservas' %}">Reservas</a></li>
+            <li><a href="{% url 'url_clientes' %}">Clientes</a></li>
+            <li><a href="{% url 'url_filmes' %}">Filmes</a></li>
+            <li><a href="">Contato</a></li>
+        </ul>
+    </div>
+</header>
+
 <body>
     <form method="POST" >
         {% csrf_token %}
-
-        {{ FormFilme.as_p }}
+      
+       
+        {{ FormFilme.as_p }} 
+    
+      
 
         <button type="submit">Salvar</button>                      
     </form>
+  
     
 </body>
 </html>
