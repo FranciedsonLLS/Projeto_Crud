@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'style_telas.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!--Tela Principal de Clientes (LISTA CLIENTES)-->
+
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="{% static 'logo.png'%}" alt="">
+            </div>
+            <ul class="nav">
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'url_reservas' %}">Reservas</a></li>
+                <li><a href="{% url 'url_clientes' %}">Clientes</a></li>
+                <li><a href="{% url 'url_filmes' %}">Filmes</a></li>
+                <li><a href="{% url 'listagem' %}">Listagem Filmes</a></li>
+                <li><a href="{% url 'consulta' %}">Busca</a></li>
+                <li><a href="">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <ul id="tabela">
+    {%for Reserva in Reservas%}
+    <table>
+        <thead>
+            <tr>
+               <th id="titulo"> ID : <th>{{Reserva.id}}</th> </th>
+               <th id="titulo"> CLIENTE : <th>{{Reserva.cliente}}</th></th>
+               <th id="titulo"> FILME : <th>{{Reserva.filme}}</th></th>
+               <th id="titulo"> STATUS : <th>{{Reserva.status}}</th></th>
+                <th id="botao"><a href="{% url 'url_update_reservas' Reserva.id%}"> Editar Reserva </a></th>
+                <th id="botao"><a href="{% url 'url_delete_reservas' Reserva.id%}">Deletar Reserva</a></th>
+            </tr>
+        </thead>   
+    </table> 
+    {% endfor %}
+    <button>
+    <a href="{% url 'url_create_reservas' %}">Adicionar Reserva</a>
+</button>
+
+</ul>
+</body>
+</html>
+

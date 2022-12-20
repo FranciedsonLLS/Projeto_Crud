@@ -1,0 +1,36 @@
+{% block content %}
+{% load static %}
+    <link href="{% static 'busca.css' %}" rel="stylesheet">
+ <center>
+ <h4>Listagem dos Registros Encontrados</h4>
+ {% if resultados %}
+ 
+ <ul id="tabela"> 
+    
+ <table>
+    <thead>
+ <tr>
+ <th id="titulo" >Nome</th>
+ <th id="titulo" >Duração</th>
+ <th  id="titulo">Autor</th>
+ </tr>
+</thead>
+
+ <tbody>
+ {% for reg in resultados %}
+ <tr>
+ <td>{{reg.nome}}</td>
+ <td>{{reg.duracao}}</td>
+ <td>{{reg.autor}}</td>
+ </tr>
+ {% endfor %}
+ </tbody>
+ </table>
+ </ul>
+ 
+ {% else %}
+ <h4>Sem Registros</h4>
+ {% endif %}
+ <button><a href="{% url 'home' %}">Retornar </a></button>
+ </center>
+{% endblock %}

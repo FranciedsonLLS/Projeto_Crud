@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url(fundo.jpg);
+    background-size: cover;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: auto;
+    background-color: black;
+}
+
+header {   
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    
+}
+
+td{
+    color: white;
+    background-color: #333;
+}
+
+
+
+table{
+    
+    table-layout: fixed;
+    text-align: center;
+    width: 90%;
+
+}
+
+	
+
+			
+
+table thead tr th {		
+	padding: 3px 8px;
+	border-bottom:2px solid black;
+	border-right: 1px solid black;
+}
+
+
+
+
+
+#titulo{
+    background-color: #831010;
+   
+}
+
+
+
+button{
+    margin-top: 3%;
+    width: 200px;
+    height: 50px;
+    background-color: #831010;
+    
+    color: white;
+    border-radius: 7px;   
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+	
