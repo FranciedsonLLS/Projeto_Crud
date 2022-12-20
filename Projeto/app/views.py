@@ -123,3 +123,16 @@ def Delete_Reservas(request, pk):
     reserva = Reserva.objects.get(pk=pk)
     reserva.delete()
     return redirect('url_reservas')
+
+def listagem(request):
+ listatotal = Filme.objects.all()
+ return render(request, 'listagem.html', {'listatotal':listatotal}
+ )
+
+def consulta(request):
+ return render(request, 'consulta.html')
+
+def busca(request):
+ buscar = request.GET.get('busca')
+ resultados = Filme.objects.filter(nome__icontains= buscar)
+ return render(request, 'busca.html', {'resultados': resultados})

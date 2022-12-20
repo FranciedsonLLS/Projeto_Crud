@@ -17,12 +17,12 @@ from django.contrib import admin
 from app.models import models
 from django.urls import path
 from app.views import Lista_Clientes, Create_Clientes, Update_Clientes, Delete_Clientes, home
-from app.views import Lista_Filmes , Create_Filmes , Update_Filmes, Delete_Filmes
+from app.views import Lista_Filmes , Create_Filmes , Update_Filmes, Delete_Filmes, listagem, busca, consulta
 from app.views import Lista_Reservas , Create_Reservas , Update_Reservas, Delete_Reservas
 urlpatterns = [   
     #HOME PAGE
     path('admin/', admin.site.urls),
-    path('', home),
+    path('home', home, name='home'),
 
     # CRUD URL DE CLIENTES #
     path('Clientes/', Lista_Clientes, name='url_clientes'),
@@ -41,4 +41,9 @@ urlpatterns = [
     path('Criar_Reserva/', Create_Reservas, name='url_create_reservas'),
     path('Editar_Reservas/<int:pk>/', Update_Reservas, name='url_update_reservas'),
     path('Delete_Reservas/<int:pk>/', Delete_Reservas, name='url_delete_reservas'),
+
+    path('listagem/', listagem, name='listagem'),
+    path('consulta/', consulta, name='consulta'),
+    path('busca/', busca, name='busca'),
+
 ]

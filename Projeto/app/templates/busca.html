@@ -1,0 +1,26 @@
+{% block content %}
+ <center>
+ <h4>Listagem dos Registros Encontrados</h4>
+ {% if resultados %}
+ <table>
+ <tr>
+ <th >Nome</th>
+ <th >Duração</th>
+ <th >Autor</th>
+ </tr>
+ <tbody>
+ {% for reg in resultados %}
+ <tr>
+ <td>{{reg.nome}}</td>
+ <td>{{reg.duracao}}</td>
+ <td>{{reg.autor}}</td>
+ </tr>
+ {% endfor %}
+ </tbody>
+ </table>
+ {% else %}
+ <h4>Sem Registros</h4>
+ {% endif %}
+ <a href="{% url 'home' %}">Retornar </a>
+ </center>
+{% endblock %}
